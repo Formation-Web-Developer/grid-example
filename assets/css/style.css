@@ -1,0 +1,101 @@
+/* Je reset le margin et le padding de tout mes éléments.*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mon élément principal ou sera créer ma grille. */
+.d-grid{
+    /* Je donne une taille à mon élément. Soit la totalité de la longueur ainsi que la hauteur. */
+    width: 100vw;
+    height: 100vh;
+
+    /* On déclarre que le display est une grille. */
+    display: grid;
+
+    /* Je créais 3 colonnes de même longueur.*/
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Je créais 5 ligne de même hauteur. */
+    grid-template-rows: repeat(5, 1fr);
+
+    /* 
+       Je donne les position par défaut à chaque élément que contiendra ma grille. 
+       (Les noms ne sont pas fixe. Vous avez le choix de les appeler comme vous le souhaitez.)
+    */
+    grid-template-areas: "nav nav nav"
+                         "section1 section1 section1"
+                         "section2 section2 section2"
+                         "section3 section3 section3"
+                         "footer footer footer";
+
+}
+
+/* 1er élément de ma grille. */
+.block1{
+    /* Je donne un nom à mon élément pour qu'il puisse être ciblé par le possitionnement donné à mon élément principal de ma grille (.d-grid) */
+    grid-area: nav;
+
+    /* Je donne une couleur verte à mon arrière plan de l'élément. */
+    background-color: green;
+}
+
+/* 2ème élément de ma grille. */
+.block2{
+    /* Je donne un nom à mon élément pour qu'il puisse être ciblé par le possitionnement donné à mon élément principal de ma grille (.d-grid) */
+    grid-area: section1;
+
+    /* Je donne une couleur verte à mon arrière plan de l'élément. */
+    background-color: red;
+}
+
+/* 3ème élément de ma grille. */
+.block3{
+    /* Je donne un nom à mon élément pour qu'il puisse être ciblé par le possitionnement donné à mon élément principal de ma grille (.d-grid) */
+    grid-area: section2;
+
+    /* Je donne une couleur verte à mon arrière plan de l'élément. */
+    background-color: blue;
+}
+
+/* 4ème élément de ma grille. */
+.block4{
+    /* Je donne un nom à mon élément pour qu'il puisse être ciblé par le possitionnement donné à mon élément principal de ma grille (.d-grid) */
+    grid-area: section3;
+
+    /* Je donne une couleur verte à mon arrière plan de l'élément. */
+    background-color: yellow;
+}
+
+/* 5ème élément de ma grille. */
+.block5{
+    /* Je donne un nom à mon élément pour qu'il puisse être ciblé par le possitionnement donné à mon élément principal de ma grille (.d-grid) */
+    grid-area: footer;
+
+    /* Je donne une couleur verte à mon arrière plan de l'élément. */
+    background-color: salmon;
+}
+
+/* Je cible tous les types d'écran moyen (tablette). */
+@media (min-width: 768px){
+    /* Je modifie le tableau de positionnement de mes éléments. */
+    .d-grid{
+        grid-template-areas: "nav nav nav"
+                         "section1 section2 section2"
+                         "section1 section2 section2"
+                         "section3 section3 section3"
+                         "footer footer footer";
+    }
+}
+
+/* Je cible tous les types d'écran large. */
+@media (min-width: 992px){
+    /* Je modifie le tableau de positionnement de mes éléments. */
+    .d-grid{
+        grid-template-areas: "nav nav nav"
+                         "section1 section2 section3"
+                         "section1 section2 section3"
+                         "section1 section2 section3"
+                         "footer footer footer";
+    }
+}
